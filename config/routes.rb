@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v1 do
-      resources :restaurants, only: [ :index, :show ]
+      get "/restaurants/search", to: "restaurants#search"
+      resources :restaurants, only: [ :index, :show ] do
+      end
     end
   end
 end
